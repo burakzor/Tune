@@ -1,3 +1,5 @@
+package Starter;
+
 import Controller.TuneController;
 
 public class TuneStarter {
