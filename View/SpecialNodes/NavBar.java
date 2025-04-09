@@ -1,4 +1,4 @@
 package View.SpecialNodes;
 
-public class Navigator {
+public class NavBar {
 }
