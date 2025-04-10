@@ -2,10 +2,11 @@ package com.example.demo;
 //mehmet
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class Controller {
-
+    private Button button;
     // Stage and Frames
     public Stage stage;
     private WelcomeFrame welcomeFrame;
