@@ -30,8 +30,8 @@ public class Controller {
         welcomeFrame.getLogin().setOnAction(new goToLoginFrame());
         welcomeFrame.getSignUp().setOnAction(new goToSignupFrame());
 
-        loginFrame.getWelcome().setOnAction(new goToWelcomeFrame());
-        loginFrame.getLogin().setOnAction(new goToHomeFrame());
+
+        loginFrame.getLoginButton().setOnAction(new goToHomeFrame());
 
         signUpFrame.getWelcome().setOnAction(new goToWelcomeFrame());
         signUpFrame.getSignUp().setOnAction(new goToLoginFrame());

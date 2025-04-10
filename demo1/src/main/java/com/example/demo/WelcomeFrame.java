@@ -18,7 +18,6 @@ public class WelcomeFrame extends Scene {
     private Button login;
     private Button signUp;
     private ImageView backgroundImageView;
-    private ImageView messiImageView;
 
 
 
@@ -43,23 +42,17 @@ public class WelcomeFrame extends Scene {
 
         // Images ( Background & Messi )
         Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/demo/TuneBackground.png"));
-        Image messiImage = new Image(getClass().getResourceAsStream("/com/example/demo/messi.jpeg"));
 
         backgroundImageView = new ImageView(backgroundImage);
         backgroundImageView.setFitWidth(800);
         backgroundImageView.setFitHeight(600);
         backgroundImageView.setPreserveRatio(false);
 
-        messiImageView = new ImageView(messiImage);
-        messiImageView.setFitWidth(240);
-        messiImageView.setPreserveRatio(true);
-
 
         VBox vbox = new VBox(20);
         HBox hbox = new HBox(20);
         hbox.getChildren().addAll(login, signUp);
-        vbox.getChildren().addAll(messiImageView, tuneLabel, descriptionLabel, hbox);
-        vbox.setPadding(new Insets(-100, 0, 0, 0));
+        vbox.getChildren().addAll(tuneLabel, descriptionLabel, hbox);
 
         vbox.setAlignment(Pos.CENTER);
         hbox.setAlignment(Pos.CENTER);
