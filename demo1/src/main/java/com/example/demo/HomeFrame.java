@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -9,7 +10,8 @@ import javafx.scene.layout.VBox;
 public class HomeFrame extends Scene {
 
     private Label label;
-    private ImageView messiImageView;
+    private NavigateBar navigateBar;
+
 
 
     public HomeFrame() {
@@ -17,17 +19,16 @@ public class HomeFrame extends Scene {
 
         Label label = new Label("HOME PAGE");
 
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/demo/messi.jpeg"));
-        messiImageView = new ImageView(backgroundImage);
-        messiImageView.setFitWidth(800);
-        messiImageView.setFitHeight(600);
-        messiImageView.setPreserveRatio(false);
-
+        navigateBar = new NavigateBar();
 
         VBox layout = (VBox) getRoot();
         layout.setSpacing(20);
-        layout.getChildren().addAll(messiImageView, label);
+
+        layout.getChildren().addAll(navigateBar);
     }
 
+    public NavigateBar getNavigateBar() {
+        return navigateBar;
+    }
 }
 

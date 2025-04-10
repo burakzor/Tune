@@ -14,6 +14,7 @@ public class Controller {
     private LoginFrame loginFrame;
     private SignUpFrame signUpFrame;
     private HomeFrame homeFrame;
+    private ProfileFrame profileFrame;
 
     public Controller(Stage stage) {
         this.stage = stage;
@@ -24,16 +25,21 @@ public class Controller {
         loginFrame = new LoginFrame();
         signUpFrame = new SignUpFrame();
         homeFrame = new HomeFrame();
+        profileFrame = new ProfileFrame();
 
         // Adding actions to the Buttons
         welcomeFrame.getLogin().setOnAction(new goToLoginFrame());
         welcomeFrame.getSignUp().setOnAction(new goToSignupFrame());
 
-
         loginFrame.getLoginButton().setOnAction(new goToHomeFrame());
 
-
         signUpFrame.getSignupButton().setOnAction(new goToLoginFrame());
+
+        homeFrame.getNavigateBar().getProfileButton().setOnAction(new goToProfileFrame());
+        homeFrame.getNavigateBar().getHomeButton().setOnAction(new goToHomeFrame());
+
+        profileFrame.getNavigateBar().getProfileButton().setOnAction(new goToProfileFrame());
+        profileFrame.getNavigateBar().getHomeButton().setOnAction(new goToHomeFrame());
     }
 
     // Action event methods
@@ -57,6 +63,11 @@ public class Controller {
     public void showHomeFrame() {
         stage.setScene(homeFrame);
         stage.setTitle("HOME");
+        stage.show();
+    }
+    public void showProfileFrame() {
+        stage.setScene(profileFrame);
+        stage.setTitle("PROFILE");
         stage.show();
     }
 
@@ -87,6 +98,14 @@ public class Controller {
         @Override
         public void handle(ActionEvent event) {
             showHomeFrame();
+        }
+    }
+
+    private class goToProfileFrame implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            showProfileFrame();
         }
     }
 }
