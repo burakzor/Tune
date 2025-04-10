@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class Controller {
 
     // Stage and Frames
-    private Stage stage;
+    public Stage stage;
     private WelcomeFrame welcomeFrame;
     private LoginFrame loginFrame;
     private SignUpFrame signUpFrame;
