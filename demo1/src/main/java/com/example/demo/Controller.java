@@ -32,8 +32,8 @@ public class Controller {
 
         loginFrame.getLoginButton().setOnAction(new goToHomeFrame());
 
-        signUpFrame.getWelcome().setOnAction(new goToWelcomeFrame());
-        signUpFrame.getSignUp().setOnAction(new goToLoginFrame());
+
+        signUpFrame.getSignupButton().setOnAction(new goToLoginFrame());
     }
 
     // Action event methods
