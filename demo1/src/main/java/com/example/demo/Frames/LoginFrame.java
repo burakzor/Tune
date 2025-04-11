@@ -1,5 +1,6 @@
 package com.example.demo.Frames;
 
+import com.example.demo.SpecialNodes.GeneralButton;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -27,6 +28,7 @@ public class LoginFrame extends Scene {
 
     public LoginFrame() {
         super(new StackPane(), 800, 600);
+        this.getStylesheets().add(getClass().getResource("welcomeFrameStyle.css").toExternalForm());
 
         // Label for the text
         tuneLabel = new Label("Tune");
@@ -38,9 +40,7 @@ public class LoginFrame extends Scene {
         passwordLabel.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 17));
 
         // Buttons
-        loginButton = new Button("Login");
-        loginButton.setPrefWidth(110);
-        loginButton.setStyle("-fx-background-color: black; -fx-text-fill: white;" );
+        loginButton = new GeneralButton("Login");
 
         // Text fields for username and password
         usernameTextField = new TextField();

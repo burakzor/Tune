@@ -2,14 +2,14 @@
         -fx-font-size: 14;
         -fx-pref-width: 110;
         -fx-pref-height: 30;
-        -fx-border-radius: 15;
-    }
-
-    .loginButton {
-        -fx-background-color: LIGHTGRAY;
-    }
-
-    .signUpButton {
+        -fx-border-radius: 50px;
+        -fx-border-width: 10px;
         -fx-background-color: black;
         -fx-text-fill: WHITE;
+    }
+
+
+    .grayButton {
+        -fx-background-color: LIGHTGRAY;
+        -fx-text-fill: BLACK;
     }

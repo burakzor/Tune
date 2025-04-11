@@ -1,5 +1,6 @@
 package com.example.demo.Frames;
 
+import com.example.demo.SpecialNodes.GeneralButton;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -29,6 +30,7 @@ public class SignUpFrame extends Scene {
 
     public SignUpFrame() {
         super(new StackPane(), 800, 600);
+        this.getStylesheets().add(getClass().getResource("welcomeFrameStyle.css").toExternalForm());
 
         // Label for the text
         tuneLabel = new Label("Tune");
@@ -42,9 +44,7 @@ public class SignUpFrame extends Scene {
         emailLabel.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 17));
 
         // Buttons
-        signupButton = new Button("Login");
-        signupButton.setPrefWidth(110);
-        signupButton.setStyle("-fx-background-color: black; -fx-text-fill: white;" );
+        signupButton = new GeneralButton("Sign Up");
 
         // Text fields for username and password
         usernameTextField = new TextField();

@@ -1,5 +1,6 @@
 package com.example.demo.Frames;
 
+import com.example.demo.SpecialNodes.GeneralButton;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,12 +32,11 @@ public class WelcomeFrame extends Scene {
         descriptionLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 20));
 
         //Buttons
-        loginButton = new Button("Login");
-        signUpButton = new Button("Sign Up");
+        loginButton = new GeneralButton("Login");
+        signUpButton = new GeneralButton("Sign Up");
 
         //loginButton.setStyle("-fx-background-color: LIGHTGRAY;");
-        loginButton.getStyleClass().add("loginButton");
-        signUpButton.getStyleClass().add("signUpButton");
+        loginButton.getStyleClass().add("grayButton");
 
         // Images ( Background & Messi )
         Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/demo/TuneBackground.png"));
