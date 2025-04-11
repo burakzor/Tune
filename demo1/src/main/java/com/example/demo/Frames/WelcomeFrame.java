@@ -1,28 +1,28 @@
-package com.example.demo;
+package com.example.demo.Frames;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+
 public class WelcomeFrame extends Scene {
 
-    private Button login;
-    private Button signUp;
+    private Button loginButton;
+    private Button signUpButton;
     private ImageView backgroundImageView;
 
 
 
     public WelcomeFrame() {
         super(new StackPane(), 800, 600);
+        this.getStylesheets().add(getClass().getResource("welcomeFrameStyle.css").toExternalForm());
+
 
         // Labels
         Label tuneLabel = new Label("TUNE");
@@ -31,14 +31,12 @@ public class WelcomeFrame extends Scene {
         descriptionLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 20));
 
         //Buttons
-        login = new Button("Login");
-        signUp = new Button("Sign Up");
+        loginButton = new Button("Login");
+        signUpButton = new Button("Sign Up");
 
-        login.setStyle("-fx-background-color: gray;");
-        signUp.setStyle("-fx-background-color: black; -fx-text-fill: white;");
-
-        login.setPrefWidth(110);
-        signUp.setPrefWidth(110);
+        //loginButton.setStyle("-fx-background-color: LIGHTGRAY;");
+        loginButton.getStyleClass().add("loginButton");
+        signUpButton.getStyleClass().add("signUpButton");
 
         // Images ( Background & Messi )
         Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/demo/TuneBackground.png"));
@@ -48,10 +46,10 @@ public class WelcomeFrame extends Scene {
         backgroundImageView.setFitHeight(600);
         backgroundImageView.setPreserveRatio(false);
 
-
+        BorderPane pane = new BorderPane();
         VBox vbox = new VBox(20);
         HBox hbox = new HBox(20);
-        hbox.getChildren().addAll(login, signUp);
+        hbox.getChildren().addAll(loginButton, signUpButton);
         vbox.getChildren().addAll(tuneLabel, descriptionLabel, hbox);
 
         vbox.setAlignment(Pos.CENTER);
@@ -62,11 +60,11 @@ public class WelcomeFrame extends Scene {
     }
 
     // getters for Buttons
-    public Button getLogin() {
-        return login;
+    public Button getLoginButton() {
+        return loginButton;
     }
 
-    public Button getSignUp() {
-        return signUp;
+    public Button getSignUpButton() {
+        return signUpButton;
     }
 }

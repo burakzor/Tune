@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.SpecialNodes;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -16,7 +16,6 @@ public class NavigateBar extends VBox {
     private Button profileButton;
     private Button tuneButton;
     private Button settingsButton;
-
     private ImageView homeImageView;
     private ImageView profileImageView;
     private ImageView tuneImageView;

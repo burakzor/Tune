@@ -1,10 +1,8 @@
-package com.example.demo;
+package com.example.demo.Frames;
 
-import javafx.geometry.Pos;
+import com.example.demo.SpecialNodes.NavigateBar;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 public class HomeFrame extends Scene {

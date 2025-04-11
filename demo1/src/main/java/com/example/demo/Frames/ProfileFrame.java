@@ -1,7 +1,7 @@
-package com.example.demo;
+package com.example.demo.Frames;
 
+import com.example.demo.SpecialNodes.NavigateBar;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class ProfileFrame extends Scene {

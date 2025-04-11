@@ -1,7 +1,8 @@
-package com.example.demo;
+package com.example.demo.Controller;
 
 //a
 //b
+import com.example.demo.Frames.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -28,8 +29,8 @@ public class Controller {
         profileFrame = new ProfileFrame();
 
         // Adding actions to the Buttons
-        welcomeFrame.getLogin().setOnAction(new goToLoginFrame());
-        welcomeFrame.getSignUp().setOnAction(new goToSignupFrame());
+        welcomeFrame.getLoginButton().setOnAction(new goToLoginFrame());
+        welcomeFrame.getSignUpButton().setOnAction(new goToSignupFrame());
 
         loginFrame.getLoginButton().setOnAction(new goToHomeFrame());
 

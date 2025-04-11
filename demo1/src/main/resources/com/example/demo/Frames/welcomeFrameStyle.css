@@ -1,0 +1,15 @@
+    .button{
+        -fx-font-size: 14;
+        -fx-pref-width: 110;
+        -fx-pref-height: 30;
+        -fx-border-radius: 15;
+    }
+
+    .loginButton {
+        -fx-background-color: LIGHTGRAY;
+    }
+
+    .signUpButton {
+        -fx-background-color: black;
+        -fx-text-fill: WHITE;
+    }
