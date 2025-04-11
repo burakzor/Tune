@@ -5,6 +5,8 @@ package com.example.demo.Controller;
 import com.example.demo.Frames.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -41,6 +43,33 @@ public class Controller {
 
         profileFrame.getNavigateBar().getProfileButton().setOnAction(new goToProfileFrame());
         profileFrame.getNavigateBar().getHomeButton().setOnAction(new goToHomeFrame());
+
+        addHoverEffect(homeFrame.getNavigateBar().getHomeButton());
+        addHoverEffect(homeFrame.getNavigateBar().getProfileButton());
+        addHoverEffect(homeFrame.getNavigateBar().getSettingsButton());
+        addHoverEffect(homeFrame.getNavigateBar().getTuneButton());
+
+        addHoverEffect(profileFrame.getNavigateBar().getHomeButton());
+        addHoverEffect(profileFrame.getNavigateBar().getProfileButton());
+        addHoverEffect(profileFrame.getNavigateBar().getSettingsButton());
+        addHoverEffect(profileFrame.getNavigateBar().getTuneButton());
+
+    }
+
+    private void addHoverEffect(Button button) {
+        button.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                button.setStyle("-fx-background-color: #800037;");
+            }
+        });
+
+        button.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                button.setStyle("-fx-background-color: transparent; -fx-text-fill: black;"); // Original style
+            }
+        });
     }
 
     // Action event methods
@@ -109,4 +138,5 @@ public class Controller {
             showProfileFrame();
         }
     }
+
 }

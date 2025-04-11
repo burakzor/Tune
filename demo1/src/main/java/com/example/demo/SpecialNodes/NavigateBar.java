@@ -61,10 +61,10 @@ public class NavigateBar extends VBox {
         tuneButton.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
         settingsButton.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
 
-        homeButton.setPrefWidth(80);
-        profileButton.setPrefWidth(80);
-        tuneButton.setPrefWidth(80);
-        settingsButton.setPrefWidth(80);
+        homeButton.setPrefWidth(200);
+        profileButton.setPrefWidth(200);
+        tuneButton.setPrefWidth(200);
+        settingsButton.setPrefWidth(200);
 
         homeButton.setStyle("-fx-background-color: transparent;");
         profileButton.setStyle("-fx-background-color: transparent;");
