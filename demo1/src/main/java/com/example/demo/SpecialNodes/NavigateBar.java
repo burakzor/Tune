@@ -1,10 +1,12 @@
 package com.example.demo.SpecialNodes;
 
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -23,6 +25,7 @@ public class NavigateBar extends VBox {
 
     public NavigateBar() {
         super(20);
+
 
         // Set Navigate Bar VBox (Color, size)
         this.setStyle("-fx-border-color: #605b5b; -fx-border-width: 2px; -fx-border-radius: 5px");
@@ -79,6 +82,28 @@ public class NavigateBar extends VBox {
 
         // Adding label and buttons to VBox
         this.getChildren().addAll(label, homeButton, profileButton, tuneButton, settingsButton);
+
+        addHoverEffect(homeButton);
+        addHoverEffect(profileButton);
+        addHoverEffect(tuneButton);
+        addHoverEffect(settingsButton);
+
+    }
+
+    private void addHoverEffect(Button button) {
+        button.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                button.setStyle("-fx-background-color: #e1dddd;");
+            }
+        });
+
+        button.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                button.setStyle("-fx-background-color: transparent; -fx-text-fill: black;"); // Original style
+            }
+        });
     }
 
     // Getters for Buttons
