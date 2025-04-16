@@ -66,8 +66,9 @@ public class SignUpFrame extends Scene {
         // Image for background
         Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/demo/TuneBackground.png"));
         backgroundImageView = new ImageView(backgroundImage);
-        backgroundImageView.setFitWidth(800);
-        backgroundImageView.setFitHeight(600);
+        backgroundImageView.setOpacity(.6);
+        backgroundImageView.setFitWidth(1500);
+        backgroundImageView.setFitHeight(900);
         backgroundImageView.setPreserveRatio(false);
 
         StackPane layout = (StackPane) getRoot();

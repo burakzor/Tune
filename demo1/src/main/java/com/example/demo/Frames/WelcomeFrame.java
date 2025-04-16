@@ -41,6 +41,7 @@ public class WelcomeFrame extends Scene {
         // Images ( Background & Messi )
         Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/demo/TuneBackground.png"));
 
+
         backgroundImageView = new ImageView(backgroundImage);
         backgroundImageView.setFitWidth(800);
         backgroundImageView.setFitHeight(600);
