@@ -83,14 +83,16 @@ public class NavigateBar extends VBox {
         button.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                button.setStyle("-fx-background-color: #e1dddd;");
+
+                button.setStyle("-fx-background-color: #dadada;");
             }
         });
 
         button.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                button.setStyle("-fx-background-color: transparent; -fx-text-fill: black;"); // Original style
+
+                button.setStyle(String.format("-fx-background-color: transparent;"));
             }
         });
     }

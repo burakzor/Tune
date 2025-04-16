@@ -18,6 +18,7 @@ public class Controller {
     private SignUpFrame signUpFrame;
     private HomeFrame homeFrame;
     private ProfileFrame profileFrame;
+    private TuneFrame tuneFrame;
 
     public Controller(Stage stage) {
         this.stage = stage;
@@ -29,6 +30,7 @@ public class Controller {
         signUpFrame = new SignUpFrame();
         homeFrame = new HomeFrame();
         profileFrame = new ProfileFrame();
+        tuneFrame = new TuneFrame();
 
         // Adding actions to the Buttons
         welcomeFrame.getLoginButton().setOnAction(new goToLoginFrame());
@@ -40,10 +42,15 @@ public class Controller {
 
         homeFrame.getNavigateBar().getProfileButton().setOnAction(new goToProfileFrame());
         homeFrame.getNavigateBar().getHomeButton().setOnAction(new goToHomeFrame());
+        homeFrame.getNavigateBar().getTuneButton().setOnAction(new goToTuneFrame());
 
         profileFrame.getNavigateBar().getProfileButton().setOnAction(new goToProfileFrame());
         profileFrame.getNavigateBar().getHomeButton().setOnAction(new goToHomeFrame());
+        profileFrame.getNavigateBar().getTuneButton().setOnAction(new goToTuneFrame());
 
+        tuneFrame.getNavigateBar().getProfileButton().setOnAction(new goToProfileFrame());
+        tuneFrame.getNavigateBar().getHomeButton().setOnAction(new goToHomeFrame());
+        tuneFrame.getNavigateBar().getTuneButton().setOnAction(new goToTuneFrame());
 
     }
 
@@ -70,6 +77,11 @@ public class Controller {
     public void showHomeFrame() {
         stage.setScene(homeFrame);
         stage.setTitle("HOME");
+        stage.show();
+    }
+    public void showTuneFrame() {
+        stage.setScene(tuneFrame);
+        stage.setTitle("TUNE");
         stage.show();
     }
     public void showProfileFrame() {
@@ -113,6 +125,14 @@ public class Controller {
         @Override
         public void handle(ActionEvent actionEvent) {
             showProfileFrame();
+        }
+    }
+
+    private class goToTuneFrame implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            showTuneFrame();
         }
     }
 
