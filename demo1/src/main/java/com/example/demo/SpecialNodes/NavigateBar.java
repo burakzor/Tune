@@ -1,5 +1,7 @@
 package com.example.demo.SpecialNodes;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.util.Duration;
 
 public class NavigateBar extends VBox {
 
@@ -54,25 +57,11 @@ public class NavigateBar extends VBox {
         settingsImageView.setFitWidth(20);
 
         // Buttons
-        homeButton = new Button("Home", homeImageView);
-        profileButton = new Button("Profile", profileImageView);
-        tuneButton = new Button("Tune", tuneImageView);
-        settingsButton = new Button("Settings", settingsImageView);
+        homeButton = new NavBarButton("Home", homeImageView);
+        profileButton = new NavBarButton("Profile", profileImageView);
+        tuneButton = new NavBarButton("Tune", tuneImageView);
+        settingsButton = new NavBarButton("Settings", settingsImageView);
 
-        homeButton.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
-        profileButton.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
-        tuneButton.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
-        settingsButton.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
-
-        homeButton.setPrefWidth(200);
-        profileButton.setPrefWidth(200);
-        tuneButton.setPrefWidth(200);
-        settingsButton.setPrefWidth(200);
-
-        homeButton.setStyle("-fx-background-color: transparent;");
-        profileButton.setStyle("-fx-background-color: transparent;");
-        tuneButton.setStyle("-fx-background-color: transparent;");
-        settingsButton.setStyle("-fx-background-color: transparent;");
 
         // Label
         label = new Label("Tune");
@@ -118,6 +107,51 @@ public class NavigateBar extends VBox {
     }
     public Button getSettingsButton() {
         return settingsButton;
+    }
+
+
+    class NavBarButton extends Button {
+
+        private final int BUTTON_WIDTH = 200;
+        private final int BUTTON_HEIGHT = 100;
+
+        private FadeTransition fadeUp;
+        private FadeTransition fadeDown;
+
+        public NavBarButton(String name, ImageView imgView) {
+            super(name, imgView);
+            this.setFont(Font.font("Arial", FontWeight.SEMI_BOLD, 10));
+            this.setPrefWidth(BUTTON_WIDTH);
+            this.setPrefHeight(BUTTON_HEIGHT);
+            setHoverEffects();
+        }
+
+        private void createHoverEffects() {
+
+            fadeUp = new FadeTransition(Duration.millis(300), this);
+            fadeUp.setToValue(6.0);
+
+            fadeDown = new FadeTransition(Duration.millis(300), this);
+            fadeDown.setToValue(1);
+        }
+
+        private void setHoverEffects() {
+            this.setOnMouseEntered(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    fadeUp.play();
+                }
+            });
+
+            this.setOnMouseExited(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    fadeDown.play();
+                }
+            });
+        }
+
+
+
+
     }
 
 }

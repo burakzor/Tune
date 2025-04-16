@@ -14,6 +14,7 @@ public class HomeFrame extends Scene {
 
     public HomeFrame() {
         super(new VBox(), 800, 600);
+        this.getStylesheets().add(getClass().getResource("navBar.css").toExternalForm());
 
         Label label = new Label("HOME PAGE");
 
